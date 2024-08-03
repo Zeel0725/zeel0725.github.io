@@ -11,6 +11,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            /* background-color: #000000; Black background color */
             background: url('back_img.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #FFFFFF;
@@ -19,19 +20,45 @@
             justify-content: center;
             align-items: center;
         }
-        .content {
+        .box {
+            border: 1px solid #070807; /* Green border */
+            padding: 40px;
+            width: 600px; /* Fixed width */
+            height: 250px; /* Fixed height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5em;
+            color: #e7ebe7; /* Green text color */
             text-align: center;
+            overflow: hidden; /* Hides the overflowing text */
+            white-space: nowrap; /* Prevents text wrapping */
+            position: relative;
+        }
+        .typing {
+            display: inline-block;
+            overflow: hidden; /* Ensures no overflow */
+            /* border-right: 3px solid #00FF00; Green blinking cursor */
+            white-space: nowrap; /* Keeps text in a single line */
+            animation: typing 3.5s steps(70, end);
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
         }
         h1 {
-            font-size: 3em;
+            font-size: 2em;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds shadow to make text stand out */
             color: #FFFFFF; /* White text for contrast */
         }
+
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>Coming soon!</h1>
+    <div class="box">
+        <span class="typing">
+            <h1>coming soon </h1>
+        </span>
     </div>
 </body>
 </html>
