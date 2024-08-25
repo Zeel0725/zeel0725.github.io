@@ -8,25 +8,47 @@
 </head>
 <body>
     <header>
-        <h1>ZEEL PATEL</h1>
-        <!-- <h2>Mechanical Engineer</h2> -->
+        <h1>Zeel</h1>
+        <!-- <h2>Mechanical Engineer & ML Enthusiast</h2> -->
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#Experience">Experience</a></li>
+                <li><a href="#Education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+       
     </header>
 
-    <section id="about">
+    <section id="about" class="hidden">
         <h3>About Me</h3>
-        <p>Aspiring to leverage my strong analytical and problem-solving skills, along with my educational background in Mechanical Engineering
-             honed through coursework and practical experience. Motivated to succeed in a data-driven position that reflects the overarching 
-             mission and values of the professional landscape.</p>
+        <p>Aspiring to leverage my strong analytical and problem-solving skills, along with my educational background in 
+            Mechanical Engineering honed through coursework and practical experience. Motivated to succeed in a data-driven 
+            position that reflects the overarching mission and values of the professional landscape.</p>
     </section>
 
-    <section id="Work History">
-        <h3>Work History</h3>
+    <section id="Experience" class="hidden">
+        <h3>Experience</h3>
         <ul>
-            <li>1. </li>
+            <ul >levin Decor LLP</ul>
+            <ul >Onelab Ventures</ul>
         </ul>
     </section>
 
-    <section id="skills">
+    <section id="Education" class="Education">
+        <h3>Education</h3>
+        <ul>
+            <li>SVNIT</li>
+            <li>Puna International School</li>
+            <li>Grin Apple Public School</li>
+        </ul>
+    </section>
+
+    <section id="skills" class="hidden">
         <h3>Skills</h3>
         <ul>
             <li>AutoCAD</li>
@@ -35,16 +57,28 @@
         </ul>
     </section>
 
-    <section id="contact">
-        <h3>Contact</h3>
-        <p>Phone: <a href="tel:+918160230075">8160230075</a></p>
-        <p>Email: <a href="mailto:zeel0725@gmail.com">zeel0725@gmail.com</a></p>
-        <p>LinkedIn: <a href="http://www.linkedin.com/in/Zeel2212">LinkedIn</a></p>
+    <section id="projects" class="hidden">
+        <h3>Projects</h3>
+        <div id="projects-container"></div>
     </section>
 
-    <section id="other">
-        <h3>Other Sections</h3>
-        <p>[You can add more information here later]</p>
+    <section id="contact" class="hidden">
+        <h3>Contact</h3>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send Message</button>
+            <p id="form-response"></p>
+        </form>
+    </section>
+
+    <section id="blog" class="hidden">
+        <h3>Blog</h3>
+        <div id="blog-container"></div>
     </section>
 
     <footer>
