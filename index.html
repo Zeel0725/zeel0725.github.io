@@ -3,62 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Stealth Mode</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            /* background-color: #000000; Black background color */
-            background: url('back_img.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #FFFFFF;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .box {
-            border: 1px solid #070807; /* Green border */
-            padding: 40px;
-            width: 600px; /* Fixed width */
-            height: 250px; /* Fixed height */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5em;
-            color: #e7ebe7; /* Green text color */
-            text-align: center;
-            overflow: hidden; /* Hides the overflowing text */
-            white-space: nowrap; /* Prevents text wrapping */
-            position: relative;
-        }
-        .typing {
-            display: inline-block;
-            overflow: hidden; /* Ensures no overflow */
-            /* border-right: 3px solid #00FF00; Green blinking cursor */
-            white-space: nowrap; /* Keeps text in a single line */
-            animation: typing 3.5s steps(70, end);
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        h1 {
-            font-size: 2em;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds shadow to make text stand out */
-            color: #FFFFFF; /* White text for contrast */
-        }
-
-    </style>
+    <title>Zeel's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="box">
-        <span class="typing">
-            <h1>coming soon </h1>
-        </span>
-    </div>
+    <header>
+        <h1>ZEEL PATEL</h1>
+        <!-- <h2>Mechanical Engineer</h2> -->
+    </header>
+
+    <section id="about">
+        <h3>About Me</h3>
+        <p>Aspiring to leverage my strong analytical and problem-solving skills, along with my educational background in Mechanical Engineering
+             honed through coursework and practical experience. Motivated to succeed in a data-driven position that reflects the overarching 
+             mission and values of the professional landscape.</p>
+    </section>
+
+    <section id="Work History">
+        <h3>Work History</h3>
+        <ul>
+            <li>1. </li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h3>Skills</h3>
+        <ul>
+            <li>AutoCAD</li>
+            <li>Programming</li>
+            <li>Machine Learning (ML)</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h3>Contact</h3>
+        <p>Phone: <a href="tel:+918160230075">8160230075</a></p>
+        <p>Email: <a href="mailto:zeel0725@gmail.com">zeel0725@gmail.com</a></p>
+        <p>LinkedIn: <a href="http://www.linkedin.com/in/Zeel2212">LinkedIn</a></p>
+    </section>
+
+    <section id="other">
+        <h3>Other Sections</h3>
+        <p>[You can add more information here later]</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Zeel's Portfolio</p>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
