@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const projects = [
-        { title: "Machine Learning Model", description: "A machine learning model for predicting outcomes based on historical data.", link: "http://www.linkedin.com/in/Zeel2212" },
+        { title: "Machine Learning Model", description: "A machine learning model for predicting outcomes based on historical data.", link: "#" },
         { title: "Portfolio Website", description: "A dynamic portfolio website showcasing my skills and projects.", link: "#" }
     ];
 
@@ -32,6 +32,57 @@ document.addEventListener("DOMContentLoaded", function() {
         `;
         blogContainer.appendChild(blogElement);
     });
+
+    // Scroll animation for sections
+    function revealOnScroll() {
+        const sections = document.querySelectorAll('section');
+        const windowHeight = window.innerHeight;
+
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            if (sectionTop < windowHeight - 150) {
+                section.classList.add('visible');
+            } else {
+                section.classList.remove('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Initial call to show sections in view
+
+    // Form submission
+    const contactForm = document.getElementById('contact-form');
+    const formResponse = document.getElementById('form-response');
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        formResponse.textContent = 'Thank you for your message. I will get back to you soon!';
+        contactForm.reset();
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const headerHeight = document.querySelector('header').offsetHeight;
+
+    // Scroll to section with header offset
+    function scrollToSection(event) {
+        event.preventDefault();
+        const targetId = event.currentTarget.getAttribute("href").slice(1);
+        const targetSection = document.getElementById(targetId);
+        const offsetPosition = targetSection.offsetTop - headerHeight;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
+
+    // Attach event listeners to nav links
+    const navLinks = document.querySelectorAll("nav ul li a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", scrollToSection);
+    });
+
+    // Other existing code (projects, blog population, etc.)
 
     // Scroll animation for sections
     function revealOnScroll() {
