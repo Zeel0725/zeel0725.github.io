@@ -3,83 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeel's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #msg {
+            text-align: center;
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Zeel</h1>
-        <!-- <h2>Mechanical Engineer & ML Enthusiast</h2> -->
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#Experience">Experience</a></li>
-                <li><a href="#Education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#blog">Blog</a></li>
-            </ul>
-        </nav>
-       
-    </header>
 
-    <section id="about" class="hidden">
-        <h3>About Me</h3>
-        <p>Aspiring to leverage my strong analytical and problem-solving skills, along with my educational background in 
-            Mechanical Engineering honed through coursework and practical experience. Motivated to succeed in a data-driven 
-            position that reflects the overarching mission and values of the professional landscape.</p>
-    </section>
+    <h2>Contact Form</h2>
 
-    <section id="Experience" class="hidden">
-        <h3>Experience</h3>
-        <ul>
-           <h1>TO BE FILLED</h1>
-        </ul>
-    </section>
+    <!-- The Form -->
+    <form name="submit-to-google-sheet">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
 
-    <section id="Education" class="Education">
-        <h3>Education</h3>
-        <ul>
-            <h1>TO BE FILLED</h1>
-        </ul>
-    </section>
+    <!-- Message display -->
+    <p id="msg"></p>
 
-    <section id="skills" class="hidden">
-        <h3>Skills</h3>
-        <ul>
-            <h1> TO BE FILLED</h1>
-        </ul>
-    </section>
+    <!-- The Script -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxRe48HihkGLiyr8t4wci-nPKEtoQzROqLiNTsnSV11S88EMDEWgz7SEo4xupGXESigHQ/exec'; // Replace with your actual web app URL
+        const form = document.forms['submit-to-google-sheet'];
+        const msg = document.getElementById('msg');
+      
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          console.log('Submitting form...');
+          fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then((response) => {
+              console.log('Response:', response);
+              if (response.ok) {
+                msg.innerHTML = 'Message sent successfully';
+                setTimeout(() => {
+                  msg.innerHTML = '';
+                }, 5000);
+                form.reset();
+              } else {
+                msg.innerHTML = 'Something went wrong';
+                console.error('Error in response:', response.statusText);
+              }
+            })
+            .catch((error) => {
+              msg.innerHTML = 'Error! ' + error.message;
+              console.error('Error!', error.message);
+            });
+        });
+    </script>
 
-    <section id="projects" class="hidden">
-        <h3>Projects</h3>
-        <div id="projects-container"></div>
-    </section>
-
-    <section id="contact" class="hidden">
-        <h3>Contact</h3>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send Message</button>
-            <p id="form-response"></p>
-        </form>
-    </section>
-
-    <section id="blog" class="hidden">
-        <h3>Blog</h3>
-        <div id="blog-container"></div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Zeel's Portfolio</p>
-    </footer>
-
-    <script src="scripts.js"></script>
 </body>
 </html>
