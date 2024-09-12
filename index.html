@@ -61,7 +61,8 @@
       
         form.addEventListener("submit", (e) => {
         e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+        fetch(scriptURL, { method: "POST",mode: 'cors',
+        credentials: 'include', body: new FormData(form) })
           .then((response) => {
             msg.innerHTML = "Message sent successfully";
             setTimeout(function () {
