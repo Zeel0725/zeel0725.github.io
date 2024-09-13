@@ -42,19 +42,19 @@
 
     <h2>Contact Form</h2>
 
-    <!-- The Form -->
+    <!-- The Form
     <form name="submit-to-google-sheet">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
-    </form>
+    </form> -->
 
     <!-- Message display -->
-    <p id="msg"></p>
+    <!-- <p id="msg"></p> -->
 
     <!-- The Script -->
-    <script>
+    <!-- <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycby0Yy_ML5csJPfUpI-5-WFaleLI5Xmf2KTB2tHSTkzyySPbiapzxZbiA0WriDAKVOKwdg/exec'; // Replace with your actual web app URL
         const form = document.forms['submit-to-google-sheet'];
         const msg = document.getElementById('msg');
@@ -72,7 +72,51 @@
           })
           .catch((error) => console.error("Error!", error.message));
       });
-    </script>
+    </script> -->
+    <form id="myForm" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea><br>
+        
+        <button type="submit">Submit</button>
+      </form>
+      
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Collect form data
+          const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+          };
+      
+          // Send the form data to Google Apps Script
+          fetch('https://script.google.com/macros/s/AKfycby0Yy_ML5csJPfUpI-5-WFaleLI5Xmf2KTB2tHSTkzyySPbiapzxZbiA0WriDAKVOKwdg/exec', {
+            method: 'POST',
+            mode: 'cors', // Solves the CORS issue
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Success:', data);
+            alert('Form submitted successfully!');
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error submitting the form');
+          });
+        });
+      </script>
 
 </body>
 </html>
