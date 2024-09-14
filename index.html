@@ -13,11 +13,11 @@
 <div id="header">
     <div class="container">
         <nav>
-            <img src="images/ZLOGO.png" class="logo">  
+            <img src="images/signature_pandadoc.png" class="logo">  
             <ul id="sidemenu">
                 <li><a href="#header">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Projects</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#portfolio">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <i class="fas fa-times" onclick="closemenu()"></i>
@@ -26,14 +26,14 @@
         </nav>
         <div class="header-text">
             <p>Engineer/ML Enthusisast</p>
-            <h1>Hi, I'm <span>Zeel</span><br>Z</h1>
+            <h1>Hi, I'm <span>Zeel</span><br></h1>
         </div>
     </div>
 </div>  
 
 
 
-<!-- -----------about---------- -->
+<!-----------------------------------------------------about---------------------------------------------------->
 <div id="about">
     <div class="container">
         <div class="row">
@@ -65,9 +65,9 @@
                 </div>
                 <div class="tab-contents" id="education">
                     <ul>
-                        <li><span>B.Tech ME'25, NIT Surat</span><br>CGPA- 8.41 (Till 6th sem)</li>
-                        <li><span>Class 12 CBSE, Puna International School</span><br>Grade- 91.4%</li>
-                        <li><span>Class 10 CBSE, Grin Apple Public School</span><br>Grade- 93.16%</li>
+                        <li><span>B.Tech ME'25</span><br>NIT Surat</li>
+                        <li><span>Class 12 CBSE</span><br> Puna International School</li>
+                        <li><span>Class 10 CBSE</span><br>Grin Apple Public School</li>
                     </ul>
                 </div>
             </div>
@@ -76,11 +76,16 @@
 </div> 
 
 
-<!-- ---------services---------------- -->
-<div id="services">
+
+
+
+
+
+<!--------------------------------------------projects------------------------------------------------------------->
+<div id="projects">
     <div class="container">
         <h1 class="sub-title">Projects</h1>
-        <div class="services-list">
+        <div class="projects-list">
             <div>
                 <i class="fab fa-app-store"></i>
                 <h2>Image Processing and Machine Learning Application on Multi-Phase Flow</h2>
@@ -90,7 +95,7 @@
                 <a href="#">Learn more</a>
             </div>
             <div>
-                <i class="fas fa-code"></i>
+                <i class="fa-regular fa-user"></i>
                 <h2>Employee Attrition Prediction Model</h2>
                 <p>Developed using Logistic Regression, Decision Tree, and Random Forest with Python libraries
                      (pandas, scikit-learn).
@@ -98,7 +103,7 @@
                 <a href="#">Learn more</a>
             </div>
             <div>
-                <i class="fas fa-crop-alt"></i>
+                <i class="fa-solid fa-taxi"></i>
                 <h2>Taxi Fare Prediction Model</h2>
                 <p>eveloped using multiple algorithms, including Random Forest and Gradient Boosting, with Python
                      libraries (pandas, NumPy, scikit-learn). Applied hyperparameter tuning and feature 
@@ -107,7 +112,7 @@
                 <a href="#">Learn more</a>
             </div>
             <div>
-                <i class="fab fa-app-store"></i>
+                <i class="fa-solid fa-temperature-arrow-up"></i>
                 <h2>Temperature Distribution</h2>
                 <p>Developed a model using C++ to calculate unsteady temperature distribution,
                      Employed the TDMA algorithm for numerical solution and visualized results with GNUplot 
@@ -130,7 +135,7 @@
 
 
 
-<!-- ----------portfolio------------ -->
+<!------------------------------------------portfolio------------------------------------------------------>
 <div id="portfolio">
     <div class="container">
         <h1 class="sub-title">My Work</h1>
@@ -201,7 +206,7 @@
 
 
 
-<!-- ----------contact------------- -->
+<!----------------------------------------------------contact--------------------------------------------->
 <div id="contact">
     <div class="container">
         <div class="row">
@@ -216,14 +221,15 @@
                     <a href="http://www.linkedin.com/in/Zeel2212"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/Zeel0725"><i class="fa-brands fa-square-github"></i></i></a>
                 </div>
-                <a href="#" download class="btn btn2">Resume</a>
+                <a href="images/my-cv.pdf" download class="btn btn2">Resume</a>
+                <!-- it download the file. So remove download above if you attach google drive -->
             </div>
             <div class="contact-right">
                 <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
+                    <button type="submit" class="btn btn3">Submit</button>
                 </form>
                 <span id="msg"></span>
             </div>
@@ -255,7 +261,7 @@
 
 
 
-<!-- about section script -->
+<!------------------------------------------ about section script ------------------------------------------>
 <script>
 
     var tablinks = document.getElementsByClassName("tab-links");
@@ -277,7 +283,7 @@
 
 
 
-<!-- portfolio script -->
+<!--------------------------------------------portfolio script ---------------------------------------------------->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function () {
@@ -300,7 +306,7 @@
 
 
 
-<!-- Mobile view script -->
+<!----------------------------------------------------Mobile view script ------------------------------------------>
 
 <script>
 
@@ -323,7 +329,7 @@
 
 
 
-<!-- Google sheets script -->
+<!----------------------------------------------------------Google sheets script -------------------------------->
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzhwZhPW0WsNwfO1gCQaumqK-P11_z6ER2wwtfwujy8UQVTSyAr28AZijdUxXPA7znJFw/exec'
     const form = document.forms['submit-to-google-sheet']
