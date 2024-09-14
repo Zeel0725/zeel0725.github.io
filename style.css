@@ -332,6 +332,20 @@ form .btn2{
     margin-top: 20px;
     cursor: pointer;
 }
+.email {
+    color: inherit;
+    text-decoration: none; 
+    position: relative; 
+}
+
+.email:hover::after {
+    content: "";
+    position: absolute; 
+    left: 0; 
+    bottom: -6px;
+    width: 100%; 
+    border-bottom: 3px solid #ff004f; 
+}
 .copyright{
     width: 100%;
     text-align: center;
