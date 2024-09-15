@@ -424,7 +424,7 @@ nav .fas{
 /* This hides the menu and cross icon. Include that below in media qury to display it only in smaller screen */
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(images/phone-background.png);
+        background-image: url(images/back_img.jpg);
     }
     .header-text{
         margin-top: 100%;
